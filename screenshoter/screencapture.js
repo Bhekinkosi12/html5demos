@@ -28,11 +28,13 @@ function urlsToAbsolute(nodeList) {
 
   nodeList = [].map.call(nodeList, function(el, i) {
     var attr = el.getAttribute(attrName);
+    
     // If no src/href is present, disregard.
     if (!attr) {
       return;
     }
 
+    
     var absURL = /^(https?|data):/i.test(attr);
     if (absURL) {
       return el;
@@ -112,7 +114,8 @@ function addOnPageLoad_() {
 
 exports.screenshotPage = screenshotPage;
 
-})(window);
+})
+(window);
 
 //window.URL = window.URL || window.webkitURL;
 //window.open(window.URL.createObjectURL(screenshotPage()));
